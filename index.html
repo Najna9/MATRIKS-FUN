@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MATFUN - Matriks Fun</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>MATFUN</h1>
+                <p class="slogan">Matriks? Fun Aja di Sini!</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#calculator" class="nav-link">Kalkulator</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+            </ul>
+            <div class="identity">
+                <span>Najwa Lafina XI-H</span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h2>Selamat Datang di MATFUN</h2>
+                <p>Solusi terbaik untuk belajar matriks dengan cara yang menyenangkan!</p>
+                <button class="cta-button" onclick="scrollToSection('calculator')">Mulai Hitung</button>
+            </div>
+        </section>
+
+        <section id="calculator" class="calculator-section">
+            <h2>Kalkulator Matriks</h2>
+            <div class="calculator-container">
+                <div class="input-section">
+                    <div class="matrix-input">
+                        <h3>Matriks A</h3>
+                        <div class="size-selector">
+                            <label>Baris:</label>
+                            <select id="rowsA" onchange="updateMatrixSize('A')">
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                            <label>Kolom:</label>
+                            <select id="colsA" onchange="updateMatrixSize('A')">
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                        <div id="matrixA" class="matrix-grid"></div>
+                    </div>
+
+                    <div class="operation-selector">
+                        <h3>Operasi</h3>
+                        <select id="operation" onchange="toggleMatrixB()">
+                            <option value="add">Penjumlahan (+)</option>
+                            <option value="subtract">Pengurangan (-)</option>
+                            <option value="multiply">Perkalian (×)</option>
+                            <option value="determinant">Determinan</option>
+                            <option value="inverse">Invers</option>
+                            <option value="transpose">Transpose</option>
+                        </select>
+                    </div>
+
+                    <div class="matrix-input" id="matrixBContainer">
+                        <h3>Matriks B</h3>
+                        <div class="size-selector">
+                            <label>Baris:</label>
+                            <select id="rowsB" onchange="updateMatrixSize('B')">
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                            <label>Kolom:</label>
+                            <select id="colsB" onchange="updateMatrixSize('B')">
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                            </select>
+                        </div>
+                        <div id="matrixB" class="matrix-grid"></div>
+                    </div>
+                </div>
+
+                <button class="calculate-btn" onclick="calculate()">Hitung</button>
+
+                <div class="result-section">
+                    <h3>Hasil</h3>
+                    <div id="result" class="matrix-result"></div>
+                    <button class="clear-btn" onclick="clearResult()">Clear</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <h2>About MATFUN</h2>
+            <div class="about-content">
+                <h3>Belajar matriks nggak harus ribet!</h3>
+                <p>
+                    Di MATFUN, kamu bisa menghitung, memahami, dan memvisualisasikan matriks dengan cara yang seru, 
+                    cepat, dan gampang dimengerti. Dari kalkulator matriks online, cocok buat pelajar, mahasiswa, 
+                    guru, atau siapa aja yang mau paham matriks tanpa pusing.
+                </p>
+               
+        </section>
+    </main>
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
